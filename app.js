@@ -31,12 +31,12 @@ app.set('views', path.join(__dirname, 'views'));
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(
-  cors({
-    origin: 'http://127.0.0.1:3000',
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: 'http://127.0.0.1:3000',
+//     credentials: true,
+//   })
+// );
 
 app.options('*', cors());
 
