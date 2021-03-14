@@ -38,6 +38,8 @@ app.use(
   })
 );
 
+app.options('*', cors());
+
 // Set Security HTTP headers
 csp.extend(app, {
   policy: {
