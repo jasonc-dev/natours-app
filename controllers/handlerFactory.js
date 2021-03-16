@@ -1,6 +1,7 @@
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const APIFeatures = require('../utils/apiFeatures');
+const Tour = require('../models/tourModel');
 
 exports.deleteOne = (Model) =>
   catchAsync(async (req, res, next) => {
@@ -58,6 +59,8 @@ exports.getOne = (Model, popOptions) =>
       return next(new AppError('No tour found with that ID', 404));
     }
 
+    console.log(doc);
+
     res.status(200).json({
       status: 'success',
       data: {
@@ -80,6 +83,7 @@ exports.getAll = (Model) =>
     // const doc = await features.query.explain();
     const doc = await features.query;
 
+    console.log(doc);
     // SEND RESPONSE
     res.status(200).json({
       status: 'success',
